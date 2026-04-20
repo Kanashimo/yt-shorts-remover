@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { 
+        font-family: Arial; 
+        width: 300px; 
+        padding: 10px; 
+        background-color: #212121;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    img {
+        width: 100px;
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #settings {
+        display: flex;
+        width: 300px;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    #settings > div {
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    label {
+        font-size: large;
+    }
+
+    span {
+        font-size: large;
+    }
+    
+  </style>
+</head>
+<body>
+    <div id="logo">
+        <img src="/img/logo.png" alt="YouTube Shorts Remover">
+        <h1>YouTube Shorts Remover</h1>
+    </div>
+    <div id="settings">
+        <div>
+            <label>Block shorts from...</label>
+        </div>
+        <div>
+        <span>Homepage</span>
+        <input type="checkbox" id="homepage">
+        </div>
+        <div>
+        <span>Search</span>
+        <input type="checkbox" id="search">
+        </div>
+        <div>
+        <span>Navbar</span>
+        <input type="checkbox" id="navbar">
+        </div>
+        <div>
+        <span>Whole URL (/shorts)</span>
+        <input type="checkbox" id="url">
+        </div>
+    </div>
+    <script src="/popup.js"></script>
+</body>
+</html>
