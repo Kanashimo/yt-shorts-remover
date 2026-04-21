@@ -1,0 +1,47 @@
+body { 
+    font-family: Arial; 
+    width: 300px; 
+    padding: 10px; 
+    background-color: #212121;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+img {
+    width: 100px;
+}
+
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+#settings {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#settings > div {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label {
+    font-size: large;
+}
+
+span {
+    font-size: large;
+}
