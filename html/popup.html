@@ -3,30 +3,47 @@
 <head>
     <link rel="stylesheet" href="/css/popup.css">
 </head>
-<body>
+<body class="toggler-preload">
     <div id="logo">
         <img src="/img/logo.png" alt="YouTube Shorts Remover">
         <h1>YouTube Shorts Remover</h1>
     </div>
     <div id="settings">
         <div>
-            <label>Block shorts from...</label>
+            <span>Homepage</span>
+            <label class="toggler">
+                <input type="checkbox" id="homepage">
+                <div class="toggler-slider">
+                    <div class="toggler-knob"></div>
+                </div>
+            </label>
         </div>
         <div>
-        <span>Homepage</span>
-        <input type="checkbox" id="homepage">
+            <span>Search</span>
+            <label class="toggler">
+                <input type="checkbox" id="search">
+                <div class="toggler-slider">
+                    <div class="toggler-knob"></div>
+                </div>
+            </label>
         </div>
         <div>
-        <span>Search</span>
-        <input type="checkbox" id="search">
+            <span>Navbar</span>
+            <label class="toggler">
+                <input type="checkbox" id="navbar">
+                <div class="toggler-slider">
+                    <div class="toggler-knob"></div>
+                </div>
+            </label>
         </div>
         <div>
-        <span>Navbar</span>
-        <input type="checkbox" id="navbar">
-        </div>
-        <div>
-        <span>Whole URL (/shorts)</span>
-        <input type="checkbox" id="url">
+            <span>Whole URL (/shorts)</span>
+            <label class="toggler">
+                <input type="checkbox" id="url">
+                <div class="toggler-slider">
+                    <div class="toggler-knob"></div>
+                </div>
+            </label>
         </div>
     </div>
     <script src="/popup.js"></script>

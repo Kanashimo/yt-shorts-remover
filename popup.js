@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     settings.forEach(id => {
       document.getElementById(id).checked = data[id] ?? true;
     });
+    setTimeout(() => {
+      document.body.classList.remove("toggler-preload");
+    }, 300);
+    
   });
 
   settings.forEach(id => {

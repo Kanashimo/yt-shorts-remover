@@ -1,5 +1,12 @@
+@font-face {
+    font-family: "Oswald";
+    src: url("/fonts/Oswald.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body { 
-    font-family: Arial; 
+    font-family: "Oswald", Arial;
     width: 300px; 
     padding: 10px; 
     background-color: #212121;
@@ -9,6 +16,11 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 15px;
+}
+
+body.toggler-preload .toggler-knob, body.toggler-preload .toggler-slider {
+    transition: none !important;
+    -webkit-transition: none !important;
 }
 
 img {
@@ -38,10 +50,50 @@ img {
     align-items: center;
 }
 
-label {
+span {
     font-size: large;
 }
 
-span {
-    font-size: large;
+.toggler {
+    display: block;
+    width: 45px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.toggler input[type="checkbox"] {
+    display: none;
+}
+
+.toggler input[type="checkbox"]:checked+.toggler-slider .toggler-knob {
+    left: calc(100% - 19px - 3px);
+}
+
+.toggler .toggler-knob {
+    width: calc(25px - 6px);
+    height: calc(25px - 6px);
+    border-radius: 50%;
+    left: 3px;
+    top: 3px;
+    background-color: white;
+    position: absolute;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.toggler input[type="checkbox"]:checked+.toggler-slider {
+    background-color: #ff0000;
+}
+
+.toggler .toggler-slider {
+    background-color: #a4a4a4;
+    position: absolute;
+    border-radius: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
 }
