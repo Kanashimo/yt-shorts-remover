@@ -1,7 +1,7 @@
 let settings = {};
 
 function HomepageShortsBlocker() {
-  if(!settings["homepage"] && settings["homepage"] != undefined) return;
+  if(!settings["homepage"]) return;
   const shelf = document.querySelectorAll("ytd-rich-shelf-renderer");
   shelf.forEach(el => {
     el.style.display = "none";
@@ -9,7 +9,7 @@ function HomepageShortsBlocker() {
 }
 
 function SearchShortsBlocker() {
-  if(!settings["search"] && settings["search"] != undefined) return;
+  if(!settings["search"]) return;
   const shelf = document.querySelectorAll("grid-shelf-view-model");
   shelf.forEach(el => {
     el.style.display = "none";
@@ -17,7 +17,7 @@ function SearchShortsBlocker() {
 }
 
 function NavShortsBlocker() {
-  if(!settings["navbar"] && settings["navbar"] != undefined) return;
+  if(!settings["navbar"]) return;
   const nav = document.querySelectorAll('a[title="Shorts"]');
   nav.forEach(el => {
     el.style.display = "none";
@@ -25,7 +25,7 @@ function NavShortsBlocker() {
 }
 
 function UrlShortsBlocker() {
-  if((settings["url"] || settings["url"] == undefined) && location.pathname.startsWith("/shorts")) {
+  if((settings["url"]) && location.pathname.startsWith("/shorts")) {
     chrome.storage.local.set({
       "url_location": location.href
     })
@@ -33,8 +33,9 @@ function UrlShortsBlocker() {
   }
 }
 
-chrome.storage.local.get(["homepage", "search", "navbar", "url"], data => {
+chrome.storage.local.get({"homepage": true, "search": true, "navbar": true, "url": true}, data => {
   settings = data;
+
   HomepageShortsBlocker();
   SearchShortsBlocker();
   NavShortsBlocker();
