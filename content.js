@@ -33,16 +33,18 @@ function UrlShortsBlocker() {
   }
 }
 
-chrome.storage.local.get({"homepage": true, "search": true, "navbar": true, "url": true}, data => {
+chrome.storage.local.get({
+  "homepage": true, 
+  "search": true, 
+  "navbar": true, 
+  "url": true
+}, data => {
   settings = data;
-
   HomepageShortsBlocker();
   SearchShortsBlocker();
   NavShortsBlocker();
   UrlShortsBlocker();
 });
-
-
 
 const observer = new MutationObserver(() => {
   HomepageShortsBlocker();
@@ -54,4 +56,3 @@ observer.observe(document.body, {
   childList: true,
   subtree: true
 });
-
